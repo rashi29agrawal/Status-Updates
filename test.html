@@ -1,0 +1,98 @@
+<html>
+   <head>
+      
+      <script type = "text/javascript">
+      
+            function sayHello() {
+               alert("Hello World")
+            }
+            //prompt
+            function getName() {
+               var name = prompt("Enter your name : ", "First Name Last Name");
+               document.write("Name entered is : " + name);
+            }
+
+            //try&catch
+            function myError() {
+               var a = 100;
+               var b = 0;
+               
+               try {
+                  if ( b == 0 ) {
+                     throw( "Division by zero error." ); 
+                  } else {
+                     var c = a / b;
+                  }
+               }
+               catch ( e ) {
+                  alert("Error: " + e );
+               }
+            }
+
+            //switch-case loop
+
+            var grade= 'A';
+            console.log("Entering switch block<br />");
+            switch (grade) {
+               case 'A': console.log("Great Performance<br />");
+               break;
+            
+               case 'B': console.log("Can do better<br />");
+               break;
+            
+               case 'C': console.log("Needs improvement<br />");
+               break;
+                    
+               case 'F': console.log("Task Failed<br />");
+               break;
+            
+               default: console.log("Unknown Remark<br />")
+            }
+            console.log("Exiting switch block");
+
+
+            //callback func
+
+            
+            function greet(name, callback) {
+                console.log('Hi' + ' ' + name);
+                callback();
+            }
+
+            function callMe() {
+                console.log('This is a callback function');
+            }
+            // passing function as an argument
+            greet('Rashi', callMe);
+
+            // implementing this keyword
+
+            const person = {
+            firstName: "Rashi",
+            lastName: "Agrawal",
+            fullName : function() {
+                return (this.firstName + " " + this.lastName); 
+                }
+            };
+            console.log(person.fullName());
+                    
+      </script>
+      
+   </head>
+   
+   <body>
+      <p>Click the following buttons and see result</p>
+      
+      <form>
+         <input type = "button" onclick = "sayHello()" value = "Say Hello" />
+      </form>
+      <form>
+        <input type = "button" onclick = "getName()" value = "Prompt for Name" />
+     </form>
+     <form>
+        <input type = "button" onclick = "myError()" value = "Throw error" />
+     </form>
+     
+   </body>
+</html>
+
